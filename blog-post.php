@@ -156,7 +156,15 @@ while ($row = $result_post_MostR->fetch_assoc()) {
 						</div>
 					</div>
 					<!-- /comments -->
-
+					<?php
+						if(isset($_POST["send"])){
+							include('src/Exception.php');
+							include('src/PHPMailer.php');
+							include('src/SMTP.php');
+							
+							$mail = new PHPMailer;
+						}
+					?>
 					<!-- reply -->
 					<div class="section-row">
 						<div class="section-title">
@@ -187,7 +195,7 @@ while ($row = $result_post_MostR->fetch_assoc()) {
 									<div class="form-group">
 										<textarea class="input" name="message" placeholder="Message"></textarea>
 									</div>
-									<button class="primary-button">Submit</button>
+									<input class="input" type="submit" name="send">
 								</div>
 							</div>
 						</form>
