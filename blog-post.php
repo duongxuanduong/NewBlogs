@@ -10,7 +10,7 @@ $idblog = $_GET['id'];
 //$result_created = $conn->query($query_created);
 
 //$date = $result_created->fetch_assoc();
-
+//
 //đếm
 $query_post = "SELECT * FROM posts WHERE id = '$idblog'";
 $resuft = mysqli_query($conn,$query_post);
