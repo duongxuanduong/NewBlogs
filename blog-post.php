@@ -19,7 +19,7 @@ if($resuft->num_rows != 0){
 	mysqli_query($conn,$updateview);
 }
 
-//Select bài viết từ cơ sở dữ liệu//
+//Select bài viết từ cơ sở dữ liệu
 $query_post_title =  "SELECT p.*, c.id as idcate, c.tible as t  , c.descripition as des, a.name as n FROM posts as p LEFT JOIN categories as c ON p.categories_id = c.id LEFT JOIN authors AS a  ON p.author_id = a.id WHERE p.status= 1 AND p.id = " . $idblog;
 
 $result_post = $conn->query($query_post_title);
